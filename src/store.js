@@ -1,4 +1,3 @@
-import { createStore } from "redux";
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 import uuid from 'react-uuid';
 
@@ -18,5 +17,7 @@ const items = createSlice({
     }
 })
 
+const store = configureStore({ reducer: items.reducer} );
+
 export const { ADD_ITEM, DELETE_ITEM } = items.actions;
-export default store = configureStore({ reducer: items.reducer} )
+export default store;
