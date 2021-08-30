@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { DELETE_ITEM } from '../store';
 
-function Item( {text, onBtnClick, id} ) {
+function Item( {text, onBtnClick} ) {
     return (
         <li>
             {text}

@@ -13,7 +13,7 @@ function App( {items, addItem} ) {
 
   function onSubmit(e) {
     e.preventDefault();
-    ADD_ITEM(text);
+    addItem(text); //mapDispatchToProps의 addItem 부름
     setText("");
   }
 
@@ -35,12 +35,12 @@ function App( {items, addItem} ) {
   );
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state) { //state에서 items를 가져옴
   return { items: state }
 }
 function mapDispatchToProps(dispatch) {
   return {
-      addItem: (text) => dispatch(ADD_ITEM(text))
+      addItem: (text) => dispatch(ADD_ITEM(text)) //App Component에 있는 props인 addItem으로 dispatch
   };
 }
 
