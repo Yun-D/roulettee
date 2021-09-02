@@ -23,7 +23,8 @@ function App( {items, addItem} ) {
 
       <form onSubmit = {onSubmit}> 
         <input type="text" value={text} onChange={plusItem}></input>
-        <button>추가</button>
+        &nbsp;
+        <button> 추가 </button>
       </form>
 
       <ul>

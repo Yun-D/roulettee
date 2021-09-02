@@ -5,7 +5,7 @@ import { DELETE_ITEM } from '../store';
 function Item( {text, onBtnClick} ) {
     return (
         <li>
-            {text}
+            {text}&nbsp;&nbsp;
             <button onClick = {onBtnClick}> 삭제 </button>
         </li>
     )
