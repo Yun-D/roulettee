@@ -1,0 +1,11 @@
+.roulette {
+  transition: all ease 1s;
+  width: 400px;
+  height: 400px;
+  background-color: transparent;
+}
+
+.goMove {
+  transform: rotate(1800deg);
+  transition: all ease-in-out 2s;
+}

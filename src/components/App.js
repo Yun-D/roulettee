@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import styled from "styled-components";
 import { Chart } from "react-google-charts";
 
 import { ADD_ITEM } from "../store";
 import Item from "../components/Item";
+import "./Style.css";
 
 function App({ items, addItem }) {
   const [text, setText] = useState("");
@@ -19,17 +19,25 @@ function App({ items, addItem }) {
     setText("");
   }
 
+  function move() {
+    document.querySelector(".roulette").classList.add("goMove");
+  }
+
+  useEffect(() => {
+    console.log(items);
+  }, [items]);
+
   const chartOptions = {
     legend: "none", //항목 데이터 알려주는 부분
     pieSliceText: "none", //항목이 차지하는 비율
-    //pieStartAngle: 135,
-    //tooltip: { trigger: "none" }, //마우스오버 툴팁
+    pieStartAngle: 90,
+    tooltip: { trigger: "none" }, //마우스오버 툴팁
     slices: {
       //색상 지정할 수 있음
       0: { color: "skyblue" },
-      1: { color: "purple" },
+      1: { color: "beige" },
       2: { color: "yellow" },
-      3: { color: "beige" },
+      3: { color: "purple" },
     },
   };
 
@@ -46,28 +54,29 @@ function App({ items, addItem }) {
 
         <ul>
           {items.map((item) => (
-            <Item {...item} key={item.id} />
+            <Item key={item.id} {...item} />
           ))}
         </ul>
       </div>
 
       <div>
-        <button>돌아!</button>
+        <button onClick={move}>돌아!</button>
       </div>
 
-      <Chart
-        chartType="PieChart"
-        data={[
-          ["투두", "값"],
-          ["test1", 1],
-          ["test2", 1],
-          ["test3", 1],
-          ["test4", 1],
-        ]}
-        options={chartOptions}
-        width="400px"
-        height="400px"
-      />
+      <div className="roulette">
+        <Chart
+          chartType="PieChart"
+          data={[
+            ["투두", "값"],
+            ["", 1],
+            ["ㅇ", 1],
+          ]}
+          //data={items}
+          options={chartOptions}
+          width="400px"
+          height="400px"
+        />
+      </div>
     </>
   );
 }
@@ -81,14 +90,5 @@ function mapDispatchToProps(dispatch) {
     addItem: (text) => dispatch(ADD_ITEM(text)), //App Component에 있는 props인 addItem으로 dispatch
   };
 }
-
-const CircleDiv = styled.div`
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background-color: aliceblue;
-  text-align: center;
-  line-height: 400px;
-`;
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
