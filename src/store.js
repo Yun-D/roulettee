@@ -15,14 +15,17 @@ const items = createSlice({
         id: uuid(),
       });
     },
-    DELETE_ITEM: (state, action) => {
-      if (state.items.length > 2)
-        state.filter((item) => item.id !== action.payload);
+    LOAD_ITEMS: (state) => {
+      return state;
     },
+    DELETE_ITEM: (state, action) =>
+      //if (state.length > 2)
+      state.filter((item) => item.id !== action.payload), //액션이 넘겨주는 id와 동일한 id를 가진 item객체를 삭제하여 리턴
+    //else console.log(state.length);
   },
 });
 
 const store = configureStore({ reducer: items.reducer });
 
-export const { ADD_ITEM, DELETE_ITEM } = items.actions;
+export const { ADD_ITEM, DELETE_ITEM, LOAD_ITEMS } = items.actions;
 export default store;
