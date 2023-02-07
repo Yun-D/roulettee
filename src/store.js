@@ -4,16 +4,18 @@ import uuid from "react-uuid";
 const items = createSlice({
   name: "itemReducer",
   initialState: [
-    { text: "테스트 1", value: 1, id: uuid() },
-    { text: "테스트 2", value: 1, id: uuid() },
+    ["todoText", "value", "id"],
+    ["테스트 1", 1, uuid()],
+    ["테스트 2", 1, uuid()],
   ],
   reducers: {
     ADD_ITEM: (state, action) => {
-      state.push({
-        text: action.payload,
-        value: 1,
-        id: uuid(),
-      });
+      state.push(
+        // text: action.payload,
+        // value: 1,
+        // id: uuid(),
+        [action.payload, 1, uuid()]
+      );
     },
     LOAD_ITEMS: (state) => {
       return state;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Chart } from "react-google-charts";
 
-import { ADD_ITEM } from "../store";
+import { ADD_ITEM, LOAD_ITEMS } from "../store";
 import Item from "../components/Item";
 import "./Style.css";
 
@@ -23,8 +23,20 @@ function App({ items, addItem }) {
     document.querySelector(".roulette").classList.add("goMove");
   }
 
+  // const data = new google.visualization.DataTable();
+
+  //data.addColumn("todoText", "value");
+  //let data = [["todoText", "value"]];
   useEffect(() => {
     console.log(items);
+    //TODO: for문 사용하여 data를 DataTable에 추가하기(addRow)
+    // for (let i = 0; i < items.length; i++) {
+    //   data.addRow([items.text, items.value]);
+    // }
+
+    // for (let key in items) {
+    //   data.push([items[key], 1]);
+    // }
   }, [items]);
 
   const chartOptions = {
@@ -66,15 +78,17 @@ function App({ items, addItem }) {
       <div className="roulette">
         <Chart
           chartType="PieChart"
-          data={[
-            ["투두", "값"],
-            ["", 1],
-            ["ㅇ", 1],
-          ]}
-          //data={items}
+          // data={[
+          //   ["투두", "값"],
+          //   ["", 1],
+          //   ["ㅇ", 1],
+          //   [items[0].text, 1],
+          // ]}
+          data={items}
           options={chartOptions}
           width="400px"
           height="400px"
+          loader={<div>로딩중 . . </div>}
         />
       </div>
     </>
@@ -88,6 +102,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     addItem: (text) => dispatch(ADD_ITEM(text)), //App Component에 있는 props인 addItem으로 dispatch
+    loadItem: () => dispatch(LOAD_ITEMS()),
   };
 }
 
