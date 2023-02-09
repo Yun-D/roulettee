@@ -10,12 +10,7 @@ const items = createSlice({
   ],
   reducers: {
     ADD_ITEM: (state, action) => {
-      state.push(
-        // text: action.payload,
-        // value: 1,
-        // id: uuid(),
-        [action.payload, 1, uuid()]
-      );
+      return [...state, [action.payload, 1, uuid()]];
     },
     LOAD_ITEMS: (state) => {
       return state;
