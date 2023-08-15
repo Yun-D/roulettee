@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
-import { Chart } from "react-google-charts";
 
 import { ADD_ITEM } from "../utils/todoSlice";
 import Item from "../components/Item";
@@ -35,20 +34,6 @@ const TodoList = () => {
     console.log(items);
   }, [items]);
 
-  //   const chartOptions = {
-  //     legend: "none", //항목 데이터 알려주는 부분
-  //     pieSliceText: "none", //항목이 차지하는 비율
-  //     pieStartAngle: 90,
-  //     tooltip: { trigger: "none" }, //마우스오버 툴팁
-  //     slices: {
-  //       //색상 지정할 수 있음
-  //       0: { color: "skyblue" },
-  //       1: { color: "beige" },
-  //       2: { color: "yellow" },
-  //       3: { color: "purple" },
-  //     },
-  //   };
-
   return (
     <>
       <div>
@@ -70,17 +55,6 @@ const TodoList = () => {
       <div>
         <button onClick={move}>돌아!</button>
       </div>
-
-      {/* <div className="roulette">
-        <Chart
-          chartType="PieChart"
-          data={items}
-          options={chartOptions}
-          width="400px"
-          height="400px"
-          loader={<div>로딩중 . . </div>}
-        />
-      </div> */}
     </>
   );
 };

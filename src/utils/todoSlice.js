@@ -7,7 +7,6 @@ const todoSlice = createSlice({
     ADD_ITEM: (state, action) => {
       const { text, id } = action.payload;
       console.log(text);
-      //return [...state, [text, id, value: 1]];
       state.push({ text, id, value: 1 });
     },
 

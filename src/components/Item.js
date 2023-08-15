@@ -1,10 +1,8 @@
 import React from "react";
-import { connect, useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import { DELETE_ITEM } from "../utils/todoSlice";
 
 function Item({ id, text, onBtnClick }) {
-  const dispatch = useDispatch();
-
   return (
     <li>
       {text}&nbsp;&nbsp;
