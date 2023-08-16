@@ -6,7 +6,6 @@ const todoSlice = createSlice({
   reducers: {
     ADD_ITEM: (state, action) => {
       const { text, id } = action.payload;
-      console.log(text);
       state.push({ text, id, value: 1 });
     },
 

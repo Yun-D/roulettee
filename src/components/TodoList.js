@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 
 import { ADD_ITEM } from "../utils/todoSlice";
@@ -29,10 +29,6 @@ const TodoList = () => {
   const move = () => {
     document.querySelector(".roulette").classList.add("goMove");
   };
-
-  useEffect(() => {
-    console.log(items);
-  }, [items]);
 
   return (
     <>
