@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const todoSlice = createSlice({
   name: "items",
-  initialState: [],
+  initialState: ["테스트", 1, 0],
   reducers: {
     ADD_ITEM: (state, action) => {
       const { text, id } = action.payload;

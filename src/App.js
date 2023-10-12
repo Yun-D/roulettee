@@ -1,21 +1,18 @@
 import React from "react";
-import { Provider } from "react-redux";
+import { useSelector } from "react-redux";
 
-import todoReducer from "./utils/todoSlice";
-import { configureStore } from "@reduxjs/toolkit";
 import TodoList from "./components/TodoList";
-
-const store = configureStore({
-  reducer: {
-    items: todoReducer,
-  },
-});
+import Roulette from "./components/Roulette";
 
 const App = () => {
+  const rouletteData = useSelector((state) => state.items);
+  console.log(rouletteData);
+
   return (
-    <Provider store={store}>
+    <>
       <TodoList />
-    </Provider>
+      {/* <Roulette data={rouletteData} /> */}
+    </>
   );
 };
 
