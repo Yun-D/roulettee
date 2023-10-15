@@ -5,13 +5,21 @@ import TodoList from "./components/TodoList";
 import Roulette from "./components/Roulette";
 
 const App = () => {
-  const rouletteData = useSelector((state) => state.items);
+  const rouletteData = {
+    labels: useSelector((state) => state.items),
+    datasets: [
+      {
+        label: "test",
+        data: [1, 1, 1],
+      },
+    ],
+  };
   console.log(rouletteData);
 
   return (
     <>
       <TodoList />
-      {/* <Roulette data={rouletteData} /> */}
+      <Roulette data={rouletteData} />
     </>
   );
 };
