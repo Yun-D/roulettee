@@ -2,11 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const todoSlice = createSlice({
   name: "items",
-  initialState: ["테스트", 1, 0],
+  initialState: [
+    { text: "test", id: 1 },
+    { text: "test1", id: 2 },
+  ],
   reducers: {
     ADD_ITEM: (state, action) => {
       const { text, id } = action.payload;
-      state.push({ text, id, value: 1 });
+      state.push({ text, id });
     },
 
     DELETE_ITEM: (state, action) => {

@@ -6,6 +6,7 @@ import { Pie } from "react-chartjs-2";
 
 const Roulette = () => {
   const items = useSelector((state) => state.items);
+  const textValues = items.map((item) => item.text);
   const itemCounts = {};
   (items || []).forEach((item) => {
     //or 연산자 사용하여 변수 빈 배열로 초기화, foreach로 배열 내 각 항목 모두에 적용
@@ -17,7 +18,7 @@ const Roulette = () => {
   };
 
   const rouletteData = {
-    labels: useSelector((state) => state.items),
+    labels: textValues,
     datasets: [
       {
         data: Object.values(itemCounts),
@@ -25,7 +26,7 @@ const Roulette = () => {
       },
     ],
   };
-  console.log(rouletteData);
+  console.log(items);
 
   return (
     <>
