@@ -3,13 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 const todoSlice = createSlice({
   name: "items",
   initialState: [
-    { text: "test", id: 1 },
-    { text: "test1", id: 2 },
+    { text: "test", id: 1, value: 1 },
+    { text: "test1", id: 2, value: 1 },
   ],
   reducers: {
     ADD_ITEM: (state, action) => {
-      const { text, id } = action.payload;
-      state.push({ text, id });
+      const { text, id, value } = action.payload;
+      state.push({ text, id, value });
     },
 
     DELETE_ITEM: (state, action) => {

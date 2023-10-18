@@ -7,11 +7,7 @@ import { Pie } from "react-chartjs-2";
 const Roulette = () => {
   const items = useSelector((state) => state.items);
   const textValues = items.map((item) => item.text);
-  const itemCounts = {};
-  (items || []).forEach((item) => {
-    //or 연산자 사용하여 변수 빈 배열로 초기화, foreach로 배열 내 각 항목 모두에 적용
-    itemCounts[item] = (itemCounts[item] || 0) + 1; //현재 항목에 값이 없을 경우 0 반환, 있을 경우 거기에 +1
-  });
+  const dataValues = items.map((item) => item.value);
 
   const options = {
     responsive: false,
@@ -21,12 +17,11 @@ const Roulette = () => {
     labels: textValues,
     datasets: [
       {
-        data: Object.values(itemCounts),
-        backgroundColor: Object.keys(itemCounts).map(getRandomColor),
+        data: Object.values(dataValues),
+        backgroundColor: Object.keys(dataValues).map(getRandomColor),
       },
     ],
   };
-  console.log(items);
 
   return (
     <>
