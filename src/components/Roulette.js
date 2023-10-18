@@ -11,6 +11,7 @@ const Roulette = () => {
 
   const options = {
     responsive: false,
+    maintainAspectRatio: false,
   };
 
   const rouletteData = {
@@ -25,7 +26,7 @@ const Roulette = () => {
 
   return (
     <>
-      <Pie data={rouletteData} options={options} style={{ width: "700px" }} />
+      <Pie data={rouletteData} options={options} width="300vh" height="300vh" />
     </>
   );
 };
