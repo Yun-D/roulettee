@@ -3,7 +3,6 @@ import { connect, useDispatch, useSelector } from "react-redux";
 
 import { ADD_ITEM } from "../utils/todoSlice";
 import Item from "../components/Item";
-import "./Style.css";
 import uuid from "react-uuid";
 
 const TodoList = () => {

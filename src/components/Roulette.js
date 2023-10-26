@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 import "chart.js/auto";
 import { Pie } from "react-chartjs-2";
+import "./Style.css";
 
 const Roulette = () => {
   const items = useSelector((state) => state.items);
@@ -26,7 +27,13 @@ const Roulette = () => {
 
   return (
     <>
-      <Pie data={rouletteData} options={options} width="300vh" height="300vh" />
+      <Pie
+        data={rouletteData}
+        options={options}
+        width="300vh"
+        height="300vh"
+        className="roulette"
+      />
     </>
   );
 };
