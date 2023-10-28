@@ -25,10 +25,6 @@ const TodoList = () => {
     setTodoText("");
   };
 
-  const move = () => {
-    document.querySelector(".roulette").classList.add("goMove");
-  };
-
   return (
     <>
       <div>
@@ -45,10 +41,6 @@ const TodoList = () => {
             <Item key={item.id} id={item.id} text={item.text} />
           ))}
         </ul>
-      </div>
-
-      <div>
-        <button onClick={move}>돌아!</button>
       </div>
     </>
   );

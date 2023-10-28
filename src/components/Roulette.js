@@ -25,6 +25,21 @@ const Roulette = () => {
     ],
   };
 
+  const spin = () => {
+    document.querySelector(".roulette").classList.add("goMove");
+    const temp = document.getElementById("goMove");
+
+    const random = Math.floor(
+      Math.random() * (6000 - Object.values(dataValues).length + 1000) +
+        1 +
+        3600
+    );
+
+    temp.style.transform = `rotate(${random}deg)`;
+
+    console.log(random);
+  };
+
   return (
     <>
       <Pie
@@ -33,7 +48,12 @@ const Roulette = () => {
         width="300vh"
         height="300vh"
         className="roulette"
+        id="goMove"
       />
+
+      <div>
+        <button onClick={spin}>돌아!</button>
+      </div>
     </>
   );
 };

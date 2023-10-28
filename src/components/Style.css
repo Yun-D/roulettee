@@ -6,6 +6,6 @@
 }
 
 .goMove {
-  transform: rotate(1800deg);
+  /* transform: rotate(1800deg); */
   transition: all ease-in-out 2s;
 }
