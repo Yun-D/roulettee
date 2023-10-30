@@ -26,7 +26,6 @@ const Roulette = () => {
   };
 
   const spin = () => {
-    document.querySelector(".roulette").classList.add("goMove");
     const temp = document.getElementById("goMove");
 
     const random = Math.floor(
@@ -35,9 +34,8 @@ const Roulette = () => {
         3600
     );
 
+    temp.style.transition = "transform 3s ease-out";
     temp.style.transform = `rotate(${random}deg)`;
-
-    console.log(random);
   };
 
   return (
