@@ -21,6 +21,13 @@ const Roulette = () => {
       {
         data: Object.values(dataValues),
         backgroundColor: Object.keys(dataValues).map(getRandomColor),
+        tooltip: {
+          callbacks: {
+            label: function () {
+              return ""; // 툴팁 밸류 텍스트 안나오게
+            },
+          },
+        },
       },
     ],
   };
