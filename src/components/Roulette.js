@@ -13,6 +13,11 @@ const Roulette = () => {
   const options = {
     responsive: false,
     maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false, // 범례(legend) 숨김
+      },
+    },
   };
 
   const rouletteData = {
@@ -24,7 +29,7 @@ const Roulette = () => {
         tooltip: {
           callbacks: {
             label: function () {
-              return ""; // 툴팁 밸류 텍스트 안나오게
+              return ""; // 툴팁 밸류 텍스트 숨김
             },
           },
         },
