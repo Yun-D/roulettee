@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import "chart.js/auto";
 import { Pie } from "react-chartjs-2";
 import "./Style.css";
+import { colorCodes } from "../Assets/colorCode";
 
 const Roulette = () => {
   const items = useSelector((state) => state.items);
@@ -25,7 +26,7 @@ const Roulette = () => {
     datasets: [
       {
         data: Object.values(dataValues),
-        backgroundColor: Object.keys(dataValues).map(getRandomColor),
+        backgroundColor: Object.values(colorCodes),
         tooltip: {
           callbacks: {
             label: function () {
