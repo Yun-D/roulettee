@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 import "chart.js/auto";
 import { Pie } from "react-chartjs-2";
-import "./Style.css";
 import { colorCodes } from "../Assets/colorCode";
 
 const Roulette = () => {
@@ -52,25 +51,24 @@ const Roulette = () => {
   };
 
   return (
-    <>
+    <div className="rouletteArea">
       <Pie
         data={rouletteData}
         options={options}
-        width="300vh"
-        height="300vh"
+        width="420vh"
+        height="420vh"
         className="roulette"
         id="goMove"
+        //FIXME: 반응형으로 크기 바꾸고 위로 넘기기
       />
 
       <div>
-        <button onClick={spin}>돌아!</button>
+        <button onClick={spin} className="rouBtn">
+          돌아!
+        </button>
       </div>
-    </>
+    </div>
   );
-};
-
-const getRandomColor = () => {
-  return "#" + Math.floor(Math.random() * 16777215).toString(16);
 };
 
 export default Roulette;

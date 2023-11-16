@@ -27,7 +27,7 @@ const TodoList = () => {
 
   return (
     <>
-      <div>
+      <div className="todolist">
         <h1>Roulettee!</h1>
 
         <form onSubmit={onSubmit}>

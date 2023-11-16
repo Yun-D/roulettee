@@ -2,13 +2,16 @@ import React from "react";
 
 import TodoList from "./components/TodoList";
 import Roulette from "./components/Roulette";
+import "../src/components/Style.css";
 
 const App = () => {
   return (
-    <>
-      <TodoList />
-      <Roulette />
-    </>
+    <div className="container">
+      <div className="content">
+        <Roulette />
+        <TodoList />
+      </div>
+    </div>
   );
 };
 
