@@ -69,3 +69,60 @@
   background-color: white;
   border-radius: 20px;
 }
+
+.input {
+  margin-right: 10px;
+  height: 30px;
+  flex: 3;
+  border-radius: 8px;
+  border: 0;
+  box-shadow: 0px 4px 8px -2px rgba(59, 61, 64, 0.15),
+    0px 0px 0px 1px rgba(47, 49, 53, 0.08);
+}
+
+.todoBtn {
+  width: 50px;
+  flex: 0.5;
+  height: 28px;
+  background-color: #ede8e6;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 4px 0px #aeacab;
+  position: relative;
+}
+.todoBtn:active {
+  top: 4px;
+  box-shadow: 0 0 #aeacab;
+  background-color: #aeacab;
+}
+
+/* ------------------------------ */
+
+.task {
+  list-style-type: none;
+  height: 13%;
+}
+
+.taskBtn {
+  width: 50px;
+  height: 25px;
+  background-color: whitesmoke;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 0px #aeacab;
+}
+
+/* ------------------------------ */
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.todo {
+  margin: 0 10px;
+  height: 7%;
+}
+.center {
+  align-items: center;
+  justify-content: center;
+}

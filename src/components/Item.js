@@ -4,9 +4,11 @@ import { DELETE_ITEM } from "../utils/todoSlice";
 
 function Item({ id, text, onBtnClick }) {
   return (
-    <li>
+    <li className="task wrapper">
       {text}&nbsp;&nbsp;
-      <button onClick={() => onBtnClick(id)}> 삭제 </button>
+      <button onClick={() => onBtnClick(id)} className="taskBtn">
+        삭제
+      </button>
     </li>
   );
 }

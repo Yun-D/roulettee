@@ -30,10 +30,15 @@ const TodoList = () => {
       <div className="todolist">
         <h1>Roulettee!</h1>
 
-        <form onSubmit={onSubmit}>
-          <input type="text" value={todoText} onChange={plusItem}></input>
+        <form onSubmit={onSubmit} className="todo wrapper">
+          <input
+            type="text"
+            value={todoText}
+            onChange={plusItem}
+            className="input"
+          ></input>
           &nbsp;
-          <button> 추가 </button>
+          <button className="todoBtn"> 추가 </button>
         </form>
 
         <ul>
