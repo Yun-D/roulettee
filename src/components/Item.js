@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { DELETE_ITEM } from "../utils/todoSlice";
 
-import { ReactComponent as CheckBox } from "../Assets/unchecked.svg";
-
 function Item({ id, text, onBtnClick }) {
+  const [checked, setChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setChecked(!checked);
+  };
+
+  const checkboxId = `customCheckbox_${id}`;
+
   return (
     <li className="task wrapper">
-      <CheckBox width="20px" height="20px" fill="#acabe7" />
+      <input
+        type="checkbox"
+        id={checkboxId}
+        checked={checked}
+        onChange={handleCheckboxChange}
+      />
+      <label for={checkboxId} class="customCheckboxLabel"></label>
       &nbsp;&nbsp;{text}&nbsp;&nbsp;
       <button onClick={() => onBtnClick(id)} className="taskBtn">
         삭제
