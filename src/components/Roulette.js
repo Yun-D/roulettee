@@ -52,6 +52,7 @@ const Roulette = () => {
 
   return (
     <div className="rouletteArea">
+      <div className="triangle" />
       <Pie
         data={rouletteData}
         options={options}

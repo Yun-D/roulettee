@@ -21,7 +21,7 @@ function Item({ id, text, onBtnClick }) {
         checked={checked}
         onChange={handleCheckboxChange}
       />
-      <label for={checkboxId} class="customCheckboxLabel"></label>
+      <label htmlFor={checkboxId} className="customCheckboxLabel"></label>
       <span className={`${checked ? "textChecked" : "taskText"}`}>{text}</span>
       <DeleteBtn onClick={() => onBtnClick(id)} width={20} height={20} />
     </li>

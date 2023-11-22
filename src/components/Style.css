@@ -17,12 +17,25 @@
 
 /* ------------------------------ */
 
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 50px solid #1c5b99;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+
 .rouletteArea {
   flex: 1.1;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
+  position: relative;
+  padding-top: 30px;
 }
 .roulette {
   transition: all ease 1s;
