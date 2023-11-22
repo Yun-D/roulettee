@@ -100,16 +100,7 @@
 
 .task {
   list-style-type: none;
-  height: 13%;
-}
-
-.taskBtn {
-  width: 50px;
-  height: 25px;
-  background-color: whitesmoke;
-  border: 0;
-  border-radius: 5px;
-  box-shadow: 0px 2px 0px #aeacab;
+  margin-left: -10px;
 }
 
 input[type="checkbox"] {
@@ -137,6 +128,7 @@ input[type="checkbox"]:checked + .customCheckboxLabel {
 .wrapper {
   display: flex;
   flex-direction: row;
+  height: 28px;
 }
 .todo {
   margin: 0 10px;

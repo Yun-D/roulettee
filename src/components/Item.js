@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { DELETE_ITEM } from "../utils/todoSlice";
 
+import { ReactComponent as DeleteBtn } from "../Assets/trashcan.svg";
+
 function Item({ id, text, onBtnClick }) {
   const [checked, setChecked] = useState(false);
 
@@ -21,9 +23,7 @@ function Item({ id, text, onBtnClick }) {
       />
       <label for={checkboxId} class="customCheckboxLabel"></label>
       &nbsp;&nbsp;{text}&nbsp;&nbsp;
-      <button onClick={() => onBtnClick(id)} className="taskBtn">
-        삭제
-      </button>
+      <DeleteBtn onClick={() => onBtnClick(id)} width={20} height={20} />
     </li>
   );
 }
