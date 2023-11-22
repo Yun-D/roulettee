@@ -22,7 +22,7 @@ function Item({ id, text, onBtnClick }) {
         onChange={handleCheckboxChange}
       />
       <label for={checkboxId} class="customCheckboxLabel"></label>
-      &nbsp;&nbsp;{text}&nbsp;&nbsp;
+      <span className={`${checked ? "textChecked" : "taskText"}`}>{text}</span>
       <DeleteBtn onClick={() => onBtnClick(id)} width={20} height={20} />
     </li>
   );

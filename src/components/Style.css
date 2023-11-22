@@ -115,12 +115,21 @@ input[type="checkbox"] {
   width: 20px;
   display: inline-block;
   cursor: pointer;
+  margin-right: 8px;
 }
 
 /* 체크된 상태일 때의 스타일 */
 input[type="checkbox"]:checked + .customCheckboxLabel {
   background: url("../Assets/checked.svg") no-repeat;
-  background-size: contain;
+}
+
+.taskText {
+  margin-right: 8px;
+}
+.textChecked {
+  margin-right: 8px;
+  text-decoration: line-through;
+  color: #aeacab;
 }
 
 /* ------------------------------ */
