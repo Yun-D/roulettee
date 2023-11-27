@@ -52,16 +52,18 @@ const Roulette = () => {
 
   return (
     <div className="rouletteArea">
-      <div className="triangle" />
-      <Pie
-        data={rouletteData}
-        options={options}
-        width="420vh"
-        height="420vh"
-        className="roulette"
-        id="goMove"
-        //FIXME: 반응형으로 크기 바꾸고 위로 넘기기
-      />
+      <div className="checkingRoulette">
+        <div className="triangle" />
+        <Pie
+          data={rouletteData}
+          options={options}
+          width="420vh"
+          height="420vh"
+          className="roulette"
+          id="goMove"
+          //FIXME: 반응형으로 크기 바꾸고 위로 넘기기
+        />
+      </div>
 
       <div>
         <button onClick={spin} className="rouBtn">

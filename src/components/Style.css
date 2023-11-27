@@ -23,9 +23,14 @@
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   border-top: 50px solid #1c5b99;
-  position: absolute;
   z-index: 1;
-  top: 0;
+  position: absolute;
+  top: -6%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.checkingRoulette {
+  position: relative;
 }
 
 .rouletteArea {
@@ -34,8 +39,6 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  position: relative;
-  padding-top: 30px;
 }
 .roulette {
   transition: all ease 1s;
