@@ -5,6 +5,8 @@ import { ADD_ITEM } from "../utils/todoSlice";
 import Item from "../components/Item";
 import uuid from "react-uuid";
 
+import { ReactComponent as Logo } from "../Assets/logo.svg";
+
 const TodoList = () => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.items);
@@ -26,17 +28,19 @@ const TodoList = () => {
   };
 
   return (
-    <>
-      <div className="todolist">
-        <h1>Roulettee!</h1>
+    <div className="todolist">
+      <div className="logoArea">
+        <Logo width={250} className="center" />
+      </div>
 
+      <div className="todoArea">
         <form onSubmit={onSubmit} className="todo wrapper">
           <input
             type="text"
             value={todoText}
             onChange={plusItem}
             className="input"
-          ></input>
+          />
           &nbsp;
           <button className="todoBtn"> 추가 </button>
         </form>
@@ -47,7 +51,7 @@ const TodoList = () => {
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 

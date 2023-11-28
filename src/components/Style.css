@@ -150,6 +150,13 @@ input[type="checkbox"]:checked + .customCheckboxLabel {
 
 /* ------------------------------ */
 
+.logoArea {
+  text-align: center;
+  line-height: 5;
+}
+
+/* ------------------------------ */
+
 .wrapper {
   display: flex;
   flex-direction: row;
@@ -160,6 +167,6 @@ input[type="checkbox"]:checked + .customCheckboxLabel {
   height: 7%;
 }
 .center {
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
+  vertical-align: middle;
 }
