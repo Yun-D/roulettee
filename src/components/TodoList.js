@@ -33,18 +33,18 @@ const TodoList = () => {
         <Logo width={250} className="center" />
       </div>
 
-      <div className="todoArea">
-        <form onSubmit={onSubmit} className="todo wrapper">
-          <input
-            type="text"
-            value={todoText}
-            onChange={plusItem}
-            className="input"
-          />
-          &nbsp;
-          <button className="todoBtn"> 추가 </button>
-        </form>
+      <form onSubmit={onSubmit} className="todo wrapper">
+        <input
+          type="text"
+          value={todoText}
+          onChange={plusItem}
+          className="input"
+        />
+        &nbsp;
+        <button className="todoBtn"> 추가 </button>
+      </form>
 
+      <div className="taskArea">
         <ul>
           {items.map((item) => (
             <Item key={item.id} id={item.id} text={item.text} />
