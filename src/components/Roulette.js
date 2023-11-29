@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import "chart.js/auto";
@@ -9,6 +9,24 @@ const Roulette = () => {
   const items = useSelector((state) => state.items);
   const textValues = items.map((item) => item.text);
   const dataValues = items.map((item) => item.value);
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  //화면 비율에 따라 width, height 변경
+  let dynamicWidth = windowWidth >= 600 ? "420vh" : "300vh";
+  let dynamicHeight = windowWidth >= 600 ? "420vh" : "300vh";
 
   const options = {
     responsive: false,
@@ -57,11 +75,10 @@ const Roulette = () => {
         <Pie
           data={rouletteData}
           options={options}
-          width="420vh"
-          height="420vh"
+          width={dynamicWidth}
+          height={dynamicHeight}
           className="roulette"
           id="goMove"
-          //FIXME: 반응형으로 크기 바꾸고 위로 넘기기
         />
       </div>
 

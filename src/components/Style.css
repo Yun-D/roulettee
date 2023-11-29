@@ -170,3 +170,38 @@ input[type="checkbox"]:checked + .customCheckboxLabel {
   display: inline-block;
   vertical-align: middle;
 }
+
+/* ------------------------------ */
+@media (max-width: 480px) {
+  .container {
+    height: 100vh;
+  }
+  .content {
+    flex-direction: column;
+    width: 85%;
+    height: 92%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rouletteArea {
+    width: 90%;
+  }
+  .rouBtn {
+    width: 150px;
+    height: 40px;
+    margin-bottom: 15%;
+  }
+  .triangle {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 40px solid #1c5b99;
+  }
+
+  .todolist {
+    flex: 1;
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+  }
+}
