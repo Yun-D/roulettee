@@ -25,8 +25,8 @@ const Roulette = () => {
   }, []);
 
   //화면 비율에 따라 width, height 변경
-  let dynamicWidth = windowWidth >= 600 ? "420vh" : "300vh";
-  let dynamicHeight = windowWidth >= 600 ? "420vh" : "300vh";
+  let dynamicWidth = windowWidth >= 770 ? "420vh" : "300vh";
+  let dynamicHeight = windowWidth >= 770 ? "420vh" : "300vh";
 
   const options = {
     responsive: false,
